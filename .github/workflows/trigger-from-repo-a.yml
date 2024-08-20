@@ -21,8 +21,8 @@ jobs:
     - name: Checkout Repo A
       uses: actions/checkout@v3
       with:
-        repository: <your-username>/<repo-a-name>
-        path: repo-a
+        repository: contact-deepak/A
+        path: A
 
     - name: Compile and Run Java Program
       run: |
