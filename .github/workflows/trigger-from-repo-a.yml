@@ -31,10 +31,13 @@ jobs:
       run: |
         ls -R
 
-    - name: Compile and Run Java Program
+    - name: Compile Java Program
       run: |
         cd A
         javac add.java
+
+    - name: Run Java Program
+      run: java add 
 
     - name: Display Program Output
       run: |
