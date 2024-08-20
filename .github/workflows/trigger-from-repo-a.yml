@@ -1,4 +1,4 @@
-name: Triggered by Repo A1
+name: Triggered by Repo A
 
 on:
   repository_dispatch:
@@ -38,4 +38,4 @@ jobs:
         java add < ../input.txt > output.txt
 
     - name: Display Output
-      run: cat repo-a1/output.txt
+      run: cat A/output.txt
