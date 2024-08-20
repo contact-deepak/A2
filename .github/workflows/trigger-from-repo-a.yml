@@ -27,19 +27,19 @@ jobs:
         token: ${{ secrets.REPO_A2_PAT }}
         path: A
 
-    - name: List directory contents before compilation
-      run: |
-        ls -R
+    - name: Compile Java Program
+      run: javac add.java
 
-    - name: Compile and Run Java Program
-      run: |
-        cd A
-        javac add.java
-        java add < ../input.txt > output.txt
-
-    - name: List directory contents after running the program
-      run: |
-        ls -R
+    - name: Run Java Program
+      run: java add > A/output.txt  # Output to file
 
     - name: Display Output
-      run: cat A/output.txt || echo "output.txt not found"
+      run: cat A/output.txt  # Display the content of the output file
+
+    - name: Archive Build Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: java-build
+        path: .    
+
+    
