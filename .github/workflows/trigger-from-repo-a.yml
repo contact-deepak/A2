@@ -36,6 +36,3 @@ jobs:
         cd A
         javac add.java
 
-    - name: Display Program Output
-      run: |
-        cat A/result.txt
