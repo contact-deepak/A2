@@ -16,7 +16,8 @@ jobs:
         distribution: 'adopt'
 
     - name: Compile Java Program
-      run: javac add.java
+      run: cd A
+           javac add.java
 
     - name: Run Java Program
       run: java add > A/output.txt  # Output to file
