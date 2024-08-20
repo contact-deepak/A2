@@ -36,5 +36,6 @@ jobs:
         cd A
         javac add.java
 
-    - name: Display Output
-      run: cat A/output.txt || echo "output.txt not found"
+    - name: Display Program Output
+      run: |
+        cat A/result.txt
