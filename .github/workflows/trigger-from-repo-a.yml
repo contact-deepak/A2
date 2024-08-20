@@ -22,7 +22,7 @@ jobs:
       run: java add > output.txt  # Output to file
 
     - name: Display Output
-      run: cat A/output.txt  # Display the content of the output file
+      run: cat output.txt  # Display the content of the output file
 
     - name: Archive Build Artifacts
       uses: actions/upload-artifact@v3
