@@ -16,11 +16,10 @@ jobs:
         distribution: 'adopt'
 
     - name: Compile Java Program
-      run: cd A
-           javac add.java
+      run: javac add.java
 
     - name: Run Java Program
-      run: java add > A/output.txt  # Output to file
+      run: java add > output.txt  # Output to file
 
     - name: Display Output
       run: cat A/output.txt  # Display the content of the output file
