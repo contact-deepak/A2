@@ -1,4 +1,4 @@
-name: Triggered by Repo A
+name: Triggered by Repo A1
 
 on:
   repository_dispatch:
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repo B
+    - name: Checkout Repo A2
       uses: actions/checkout@v3
 
     - name: Set up JDK 17
@@ -18,11 +18,16 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
 
-    - name: Checkout Repo A
+    - name: Checkout Repo A1
       uses: actions/checkout@v3
       with:
         repository: contact-deepak/A
+        token: ${{ secrets.REPO_A2_PAT }}
         path: A
+
+    - name: List directory contents
+      run: |
+        ls -R
 
     - name: Compile and Run Java Program
       run: |
@@ -31,4 +36,4 @@ jobs:
         java add < ../input.txt > output.txt
 
     - name: Display Output
-      run: cat output.txt
+      run: cat repo-a1/output.txt
